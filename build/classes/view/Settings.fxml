@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="settingsWindow" minHeight="400.0" minWidth="700.0" stylesheets="@../css/myStyles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SettingsController">
+   <children>
+      <VBox VBox.vgrow="ALWAYS">
+         <children>
+            <SplitPane fx:id="splitPane" dividerPositions="0.2" styleClass="root" VBox.vgrow="ALWAYS">
+              <items>
+                  <VBox maxWidth="150.0" minWidth="150.0" spacing="15.0">
+                     <children>
+                        <Button fx:id="btnGeneral" minWidth="75.0" mnemonicParsing="false" onAction="#btnGeneralPressed">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/general.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
+                        <Button fx:id="btnStream" minWidth="75.0" mnemonicParsing="false" onAction="#btnSteamPressed">
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/stream.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
+                        <Button fx:id="btnVideo" minWidth="75.0" mnemonicParsing="false" onAction="#btnVideoPressed">
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/video.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
+                     </children>
+                     <padding>
+                        <Insets left="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+                  <GridPane>
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <AnchorPane fx:id="settingsStream" prefHeight="200.0" prefWidth="200.0" visible="false">
+                           <children>
+                              <ComboBox fx:id="comboService" layoutX="145.0" layoutY="46.0" onAction="#onComboServicePressed" prefHeight="26.0" prefWidth="275.0" />
+                              <ComboBox fx:id="comboServer" layoutX="145.0" layoutY="103.0" prefHeight="26.0" prefWidth="275.0" />
+                              <PasswordField fx:id="psdStreamKey" layoutX="145.0" layoutY="166.0" prefHeight="26.0" prefWidth="275.0" />
+                              <TextField fx:id="tfStreamKey" layoutX="145.0" layoutY="166.0" prefHeight="26.0" prefWidth="275.0" visible="false" />
+                              <Button fx:id="btnShowKey" layoutX="429.0" layoutY="169.0" minWidth="75.0" mnemonicParsing="false" onAction="#btnShowKeyPressed" text="Show" />
+                              <Label fx:id="lblService" layoutX="23.0" layoutY="51.0" text="Service">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font></Label>
+                              <Label fx:id="lblServer" layoutX="22.0" layoutY="108.0" text="Server">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font></Label>
+                              <Label fx:id="lblStreamKey" layoutX="16.0" layoutY="170.0" text="Stream Key (Link)">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font></Label>
+                           </children>
+                        </AnchorPane>
+                        <VBox fx:id="settingsGeneral">
+                           <children>
+                              <Label fx:id="lblGeneral" text="General">
+                                 <VBox.margin>
+                                    <Insets left="10.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <VBox alignment="CENTER_LEFT" spacing="10.0">
+                                 <children>
+                                    <Pane fx:id="generalTopPane" minHeight="100.0" stylesheets="@../css/myStyles.css">
+                                       <children>
+                                          <RadioButton fx:id="defaultTheme" layoutX="32.0" layoutY="24.0" mnemonicParsing="false" onAction="#defaultThemeSelected" text="Default">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font></RadioButton>
+                                          <ColorPicker fx:id="colorSelector" layoutX="220.0" layoutY="20.0" onAction="#colorSelectorPressed" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </Pane>
+                                    <Label fx:id="lblOutput" text="Output">
+                                       <VBox.margin>
+                                          <Insets left="10.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Pane fx:id="generalBtmPane" prefHeight="200.0" prefWidth="200.0" stylesheets="@../css/myStyles.css">
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin>
+                                       <children>
+                                          <CheckBox fx:id="checkDialogStartStream" layoutX="35.0" layoutY="21.0" mnemonicParsing="false" text="Show confirmation dialog when starting stream">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font></CheckBox>
+                                          <CheckBox fx:id="checkDialogStopStream" layoutX="35.0" layoutY="74.0" mnemonicParsing="false" text="Show confirmation dialog when stopping stream">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font></CheckBox>
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </VBox>
+                           </children>
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </VBox>
+                        <AnchorPane fx:id="settingsVideo" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" visible="false">
+                           <children>
+                              <Label fx:id="lblBaseResolution" layoutX="1.0" layoutY="50.0" text="Base (Canvas) Resolution">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font></Label>
+                              <Label fx:id="lblOutputResolution" layoutX="1.0" layoutY="99.0" text="Output (Scaled) Resolution">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font></Label>
+                              <Label fx:id="lblDownscaleFilter" layoutX="1.0" layoutY="146.0" text="Downscale Filter">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font></Label>
+                              <ComboBox fx:id="comboDownFilter" layoutX="189.0" layoutY="142.0" prefHeight="26.0" prefWidth="322.0" />
+                              <ComboBox fx:id="comboBaseResolution" editable="true" layoutX="191.0" layoutY="46.0" onAction="#onComboBaseResolutionPressed" prefHeight="26.0" prefWidth="322.0" />
+                              <ComboBox fx:id="comboOutputResolution" editable="true" layoutX="191.0" layoutY="95.0" onAction="#onComboOutputResolutionPressed" prefHeight="26.0" prefWidth="322.0" />
+                              <Label fx:id="lblErrorMessage" layoutX="73.0" layoutY="233.0">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </GridPane>
+              </items>
+            </SplitPane>
+         </children>
+      </VBox>
+      <GridPane layoutX="10.0" layoutY="420.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <ToolBar fx:id="tlbrBtm" nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="200.0" styleClass="ToolBar">
+               <items>
+                  <Button fx:id="btnOk" minWidth="75.0" mnemonicParsing="false" onAction="#btnOkPressed" text="OK" />
+                  <Button fx:id="btnCancel" minWidth="75.0" mnemonicParsing="false" onAction="#btnCancelPressed" text="Cancel" />
+               </items>
+               <padding>
+                  <Insets left="20.0" />
+               </padding></ToolBar>
+         </children>
+      </GridPane>
+   </children>
+</VBox>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="sceneWindow" prefHeight="300.0" prefWidth="250.0" stylesheets="@../css/myStyles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.dock.SceneController">
+   <children>
+      <GridPane>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <ToolBar fx:id="tlbrTop" nodeOrientation="RIGHT_TO_LEFT" styleClass="ToolBar">
+               <items>
+                  <HBox fx:id="topButtonHolder" spacing="10.0">
+                     <children>
+                        <Button fx:id="btnClose" mnemonicParsing="false" onAction="#btnClosePressed">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                           <graphic>
+                              <ImageView fitHeight="15.0" fitWidth="15.0">
+                                 <image>
+                                    <Image url="@../images/cross.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <padding>
+                              <Insets left="1.0" top="1.0" />
+                           </padding>
+                        </Button>
+                     </children>
+                  </HBox>
+               </items>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </ToolBar>
+            <Label fx:id="lblTop" text="Scene">
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </GridPane>
+      <ListView fx:id="lvScene" prefHeight="240.0">
+         <VBox.margin>
+            <Insets left="10.0" right="10.0" />
+         </VBox.margin>
+      </ListView>
+      <GridPane layoutX="10.0" layoutY="420.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <ToolBar fx:id="tlbrBtm" styleClass="ToolBar">
+               <items>
+                  <HBox fx:id="btmButtonHolder" alignment="CENTER_LEFT" nodeOrientation="LEFT_TO_RIGHT" spacing="10.0">
+                     <children>
+                        <Button fx:id="btnPlus" mnemonicParsing="false" onAction="#btnPlusPressed">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                           <graphic>
+                              <ImageView fitHeight="15.0" fitWidth="15.0">
+                                 <image>
+                                    <Image url="@../images/plus.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <padding>
+                              <Insets left="1.0" top="1.0" />
+                           </padding>
+                        </Button>
+                        <Button fx:id="btnMinus" mnemonicParsing="false" onAction="#btnMinusPressed">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <graphic>
+                              <ImageView fitHeight="15.0" fitWidth="15.0">
+                                 <image>
+                                    <Image url="@../images/minus.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <padding>
+                              <Insets left="1.0" top="1.0" />
+                           </padding>
+                        </Button>
+                        <Button fx:id="btnUp" layoutX="156.0" layoutY="10.0" mnemonicParsing="false" onAction="#btnUpPressed">
+                           <graphic>
+                              <ImageView fitHeight="15.0" fitWidth="15.0">
+                                 <image>
+                                    <Image url="@../images/up.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <HBox.margin>
+                              <Insets left="25.0" />
+                           </HBox.margin>
+                           <padding>
+                              <Insets left="1.0" top="1.0" />
+                           </padding>
+                        </Button>
+                        <Button fx:id="btnDown" layoutX="156.0" layoutY="10.0" mnemonicParsing="false" onAction="#btnDownPressed">
+                           <graphic>
+                              <ImageView fitHeight="15.0" fitWidth="15.0">
+                                 <image>
+                                    <Image url="@../images/down.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <padding>
+                              <Insets left="1.0" top="1.0" />
+                           </padding>
+                        </Button>
+                     </children>
+                  </HBox>
+               </items>
+            </ToolBar>
+         </children>
+      </GridPane>
+   </children>
+</VBox>

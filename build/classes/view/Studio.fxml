@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="studioBox" stylesheets="@../css/myStyles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.dock.StudioController">
+   <children>
+      <HBox spacing="700.0">
+         <children>
+            <Label fx:id="lblPreview" text="Preview">
+               <HBox.margin>
+                  <Insets left="400.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblLive" text="Live">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </HBox>
+      <HBox prefHeight="421.0" prefWidth="1546.0">
+         <children>
+            <AnchorPane>
+               <children>
+                  <ImageView fitHeight="550.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/studio_preview.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="lblRecording" layoutX="199.0" layoutY="276.0" text="Recording" visible="false">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Label>
+               </children>
+               <HBox.margin>
+                  <Insets left="150.0" />
+               </HBox.margin>
+            </AnchorPane>
+            <Pane prefHeight="600.0" prefWidth="150.0" />
+            <AnchorPane>
+               <children>
+                  <ImageView fitHeight="550.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/studio_live.gif" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="lblStreaming" layoutX="196.0" layoutY="276.0" text="Streaming" visible="false">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+         <VBox.margin>
+            <Insets left="25.0" right="25.0" />
+         </VBox.margin>
+      </HBox>
+   </children>
+</VBox>

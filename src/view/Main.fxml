@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckMenuItem?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="mainBox" minHeight="1100.0" prefHeight="800.0" prefWidth="1400.0" stylesheets="@../css/myStyles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
+    <children>
+    <MenuBar fx:id="topMenu" styleClass="MenuBar">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem fx:id="fmShow" mnemonicParsing="false" onAction="#fmShowPressed" text="Show Recordings" />
+            <MenuItem fx:id="fmRemux" mnemonicParsing="false" onAction="#fmRemuxPressed" text="Remux Recordings" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem fx:id="fmSettings" mnemonicParsing="false" onAction="#fmSettingsPressed" text="Settings" />
+            <MenuItem fx:id="fmShowSettingsFolder" mnemonicParsing="false" onAction="#fmShowSettingsFolderPressed" text="Show Settings Folder" />
+            <MenuItem fx:id="fmShowProfileFolder" mnemonicParsing="false" onAction="#fmShowProfileFolderPressed" text="Show Profile Folder" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem fx:id="fmExit" mnemonicParsing="false" onAction="#fmExitPressed" text="Exit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem fx:id="emCopy" mnemonicParsing="false" onAction="#emCopyPressed" text="Copy" />
+            <MenuItem fx:id="emPasteRef" mnemonicParsing="false" onAction="#emPasteRefPressed" text="Paste" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+                  <Menu mnemonicParsing="false" text="Order">
+                    <items>
+                      <MenuItem fx:id="emMoveUp" mnemonicParsing="false" onAction="#emMoveUpPressed" text="Move Up" />
+                        <MenuItem fx:id="emMoveDown" mnemonicParsing="false" onAction="#emMoveDownPressed" text="Move Down" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="emMoveTop" mnemonicParsing="false" onAction="#emMoveTopPressed" text="Move to Top" />
+                        <MenuItem fx:id="emMoveBtm" mnemonicParsing="false" onAction="#emMoveBtmPressed" text="Move to Bottom" />
+                    </items>
+                  </Menu>
+                  <CheckMenuItem fx:id="emLockPreview" mnemonicParsing="false" onAction="#emLockPreviewPressed" text="Lock UI" />
+          </items>
+        </Menu>
+            <Menu mnemonicParsing="false" text="View">
+              <items>
+                  <Menu mnemonicParsing="false" text="Docks">
+                    <items>
+                      <MenuItem fx:id="vmResetUi" mnemonicParsing="false" onAction="#vmResetUiPressed" text="Reset UI" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <CheckMenuItem fx:id="vmScenes" mnemonicParsing="false" onAction="#vmScenesPressed" text="Scenes" />
+                        <CheckMenuItem fx:id="vmSources" mnemonicParsing="false" onAction="#vmSourcesPressed" text="Sources" />
+                        <CheckMenuItem fx:id="vmMixer" mnemonicParsing="false" onAction="#vmMixerPressed" text="Mixer" />
+                        <CheckMenuItem fx:id="vmSceneTransition" mnemonicParsing="false" onAction="#vmSceneTransitionPressed" text="Scene Transitions" />
+                        <CheckMenuItem fx:id="vmControls" mnemonicParsing="false" onAction="#vmControlsPressed" text="Controls" />
+                    </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Toolbars">
+                    <items>
+                        <CheckMenuItem fx:id="vmListboxes" mnemonicParsing="false" onAction="#vmListboxesPressed" text="Listboxes" />
+                    </items>
+                  </Menu>
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Profile">
+               <items>
+                  <MenuItem fx:id="pmNew" mnemonicParsing="false" onAction="#pmNewPressed" text="New" />
+                  <MenuItem fx:id="pmDuplicate" mnemonicParsing="false" onAction="#pmDuplicatePressed" text="Duplicate" />
+                  <MenuItem fx:id="pmRename" mnemonicParsing="false" onAction="#pmRenamePressed" text="Rename" />
+                  <MenuItem fx:id="pmImport" mnemonicParsing="false" onAction="#pmImportPressed" text="Import" />
+                  <MenuItem fx:id="pmExport" mnemonicParsing="false" onAction="#pmExportPressed" text="Export" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Scene Collection">
+              <items>
+                <MenuItem fx:id="scmNew" mnemonicParsing="false" onAction="#scmNewPressed" text="New" />
+                  <MenuItem fx:id="scmDuplicate" mnemonicParsing="false" onAction="#scmDuplicatePressed" text="Duplicate" />
+                  <MenuItem fx:id="scmRename" mnemonicParsing="false" onAction="#scmRenamePressed" text="Rename" />
+                  <MenuItem fx:id="scmImport" mnemonicParsing="false" onAction="#scmImportPressed" text="Import" />
+                  <MenuItem fx:id="scmExport" mnemonicParsing="false" onAction="#scmExportPressed" text="Export" />
+              </items>
+            </Menu>
+      </menus>
+    </MenuBar>
+      <ToolBar fx:id="tlbrTop" styleClass="ToolBar">
+        <items>
+            <HBox fx:id="topButtonHolder" spacing="20.0">
+               <children>
+                <Button fx:id="btnNewStream" mnemonicParsing="false" onAction="#btnNewStreamPressed">
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/new_stream.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnRemux" mnemonicParsing="false" onAction="#btnRemuxPressed">
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/remux.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnCopy" mnemonicParsing="false" onAction="#btnCopyPressed">
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/copy.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnPaste" mnemonicParsing="false" onAction="#btnPastePressed">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/paste.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnFullscreen" mnemonicParsing="false" onAction="#btnFullscreenPressed">
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/fullscreen.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnProfile" mnemonicParsing="false" onAction="#btnProfilePressed">
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/new_profile.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnHelp" mnemonicParsing="false" onAction="#btnHelpPressed">
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/help2.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </HBox>
+        </items>
+      </ToolBar>
+  </children>
+</VBox>

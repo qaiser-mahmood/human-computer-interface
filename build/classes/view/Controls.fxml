@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="controlsWindow" prefHeight="300.0" stylesheets="@../css/myStyles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.dock.ControlsController">
+   <children>
+      <GridPane>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <ToolBar fx:id="tlbrTop" nodeOrientation="RIGHT_TO_LEFT" styleClass="ToolBar">
+               <items>
+                  <HBox fx:id="topButtonHolder" spacing="10.0">
+                     <children>
+                        <Button fx:id="btnClose" mnemonicParsing="false" onAction="#btnClosePressed">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                           <graphic>
+                              <ImageView fitHeight="15.0" fitWidth="15.0">
+                                 <image>
+                                    <Image url="@../images/cross.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <padding>
+                              <Insets left="1.0" top="1.0" />
+                           </padding>
+                        </Button>
+                     </children>
+                  </HBox>
+               </items>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </ToolBar>
+            <Label fx:id="lblTop" text="Controls">
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </GridPane>
+      <VBox alignment="CENTER" VBox.vgrow="ALWAYS">
+         <children>
+            <GridPane alignment="CENTER" hgap="20.0" styleClass="ImageView" vgap="20.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints />
+               </rowConstraints>
+               <children>
+                  <Button fx:id="btnStudio" alignment="CENTER" mnemonicParsing="false" onAction="#btnStudioPressed" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" nodeOrientation="INHERIT" styleClass="ImageView">
+                           <image>
+                              <Image url="@../images/studio_mode.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnExit" mnemonicParsing="false" onAction="#btnExitPressed" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" styleClass="ImageView">
+                           <image>
+                              <Image url="@../images/exit2.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnNewStream" mnemonicParsing="false" onAction="#btnNewStreamPressed" GridPane.columnIndex="1">
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" styleClass="ImageView">
+                           <image>
+                              <Image url="@../images/video_stream.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnStartRecording" mnemonicParsing="false" onAction="#btnStartRecordingPressed" GridPane.rowIndex="1">
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" styleClass="ImageView">
+                           <image>
+                              <Image url="@../images/audio_stream.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnSettings" mnemonicParsing="false" onAction="#btnSettingsPressed" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" styleClass="ImageView">
+                           <image>
+                              <Image url="@../images/Settings-Button2.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </GridPane>
+         </children>
+         <VBox.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </VBox.margin>
+      </VBox>
+      <GridPane layoutX="10.0" layoutY="420.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <ToolBar fx:id="tlbrBtm" prefHeight="40.0" prefWidth="200.0" styleClass="ToolBar" />
+         </children>
+      </GridPane>
+   </children>
+</VBox>

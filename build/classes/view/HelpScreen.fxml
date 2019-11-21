@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.web.WebView?>
+
+<VBox fx:id="helpBox" stylesheets="@../css/myStyles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.dock.HelpScreenController">
+   <children>
+      <WebView fx:id="webviewHelp" minHeight="-1.0" minWidth="-1.0" prefHeight="800.0" prefWidth="1200.0" VBox.vgrow="ALWAYS" />
+   </children>
+</VBox>
